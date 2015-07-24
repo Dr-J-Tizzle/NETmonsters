@@ -10,7 +10,7 @@ public class Monster {
     private Type bodyType;
     private Type attackType;
     private long dob;
-    private float xp;
+    private float experience;
     private int level;
     private int rareity;
     private int evolvelevel;
@@ -49,7 +49,7 @@ public class Monster {
         this.morality = morality;
         winratio = 0f;
         dob = new Date().getTime();
-        xp = 0;
+        experience = 0;
         level = 1;
     }
 
@@ -57,7 +57,7 @@ public class Monster {
     public Type getBodyType() { return bodyType; }
     public Type getAttackType() { return attackType; }
     public long getDob() { return dob; }
-    public float getXp() { return xp; }
+    public float getExperience() { return experience; }
     public int getLevel() { return level; }
     public int getRareity() { return rareity; }
     public int getEvolvelevel() { return evolvelevel; }
@@ -79,7 +79,7 @@ public class Monster {
     public void setBodyType(Type bodyType) { this.bodyType = bodyType; }
     public void setAttackType(Type attackType) { this.attackType = attackType; }
     public void setDob(long dob) { this.dob = dob; }
-    public void setXp(float xp) { this.xp = xp; }
+    public void setExperience(float experience) { this.experience = experience; }
     public void setLevel(int level) { this.level = level; }
     public void setRareity(int rareity) { this.rareity = rareity; }
     public void setEvolvelevel(int evolvelevel) { this.evolvelevel = evolvelevel; }
