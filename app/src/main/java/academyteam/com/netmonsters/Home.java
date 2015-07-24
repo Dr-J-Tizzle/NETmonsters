@@ -19,23 +19,23 @@ public class Home extends Activity {
         setContentView(R.layout.activity_main);
 
         // Get the reference of the buttons
-       /* btnBattle = (Button) findViewById(R.id.buttonBattle);
+       //btnBattle = (Button) findViewById(R.id.buttonBattle);
         btnCapture = (Button) findViewById(R.id.buttonCapture);
-        btnOptions = (Button) findViewById(R.id.buttonOptions);
+       /* btnOptions = (Button) findViewById(R.id.buttonOptions);
         btnTrain = (Button) findViewById(R.id.buttonTrain);*/
 
         //set onClick listeners for each button
-      /*  btnCapture.setOnClickListener(new View.OnClickListener() {
+        btnCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //Edit the "Capture.class" when Capture section completed.
-                //Intent intentCapture = new Intent(getApplicationContext(), Capture.class);
-               // startActivity(intentCapture);
+                Intent intentCapture = new Intent(getApplicationContext(), Capture.class);
+                startActivity(intentCapture);
             }
         });
 
-        btnBattle.setOnClickListener(new View.OnClickListener() {
+       /* btnBattle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
