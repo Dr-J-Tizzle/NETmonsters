@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradient"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/SplashBanner"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05"
+        android:autoText="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:enabled="false"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button4"
+        android:enabled="false"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button2"
+        android:enabled="false"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="357dp"
+        android:weightSum="1"
+        >
+
+        <TextView
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:text="@string/splashLogo"
+            android:layout_weight="0.54"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/splashImage" />
+    </LinearLayout>
+
+</LinearLayout>
