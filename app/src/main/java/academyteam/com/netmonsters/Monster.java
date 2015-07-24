@@ -9,7 +9,7 @@ public class Monster {
     private String name;
     private Type bodyType;
     private Type attackType;
-    private Date dob;
+    private long dob;
     private float xp;
     private int level;
     private int rareity;
@@ -29,14 +29,34 @@ public class Monster {
     private float morality;
     private float winratio;
 
-    public Monster() {
-        //TODO implement constructor
+    public Monster(String name, Type bodyType, Type attackType, int rareity, int evolvelevel, Attack attack1, Attack attack2, Special special, String imageFront, String imageBack, float maxhealth,float attack, float speed, float inteligence, float obedience, float morality) {
+        this.name = name;
+        this.bodyType = bodyType;
+        this.attackType = attackType;
+        this.rareity = rareity;
+        this.evolvelevel = evolvelevel;
+        this.attack1 = attack1;
+        this.attack2 = attack2;
+        this.special = special;
+        this.imageFront = imageFront;
+        this.imageBack = imageBack;
+        this.maxhealth = maxhealth;
+        this.currenthealth = maxhealth;
+        this.attack = attack;
+        this.speed = speed;
+        this.inteligence = inteligence;
+        this.obedience = obedience;
+        this.morality = morality;
+        winratio = 0f;
+        dob = new Date().getTime();
+        xp = 0;
+        level = 1;
     }
 
     public String getName() { return name; }
     public Type getBodyType() { return bodyType; }
     public Type getAttackType() { return attackType; }
-    public Date getDob() { return dob; }
+    public long getDob() { return dob; }
     public float getXp() { return xp; }
     public int getLevel() { return level; }
     public int getRareity() { return rareity; }
@@ -58,7 +78,7 @@ public class Monster {
     public void setName(String name) { this.name = name; }
     public void setBodyType(Type bodyType) { this.bodyType = bodyType; }
     public void setAttackType(Type attackType) { this.attackType = attackType; }
-    public void setDob(Date dob) { this.dob = dob; }
+    public void setDob(long dob) { this.dob = dob; }
     public void setXp(float xp) { this.xp = xp; }
     public void setLevel(int level) { this.level = level; }
     public void setRareity(int rareity) { this.rareity = rareity; }
@@ -76,4 +96,40 @@ public class Monster {
     public void setWinratio(float winratio) { this.winratio = winratio; }
     public void setImageFront(String imageFront) { this.imageFront = imageFront; }
     public void setImageBack(String imageBack) { this.imageBack = imageBack; }
+
+    public void Play() {
+        morality++;
+        obedience++;
+        speed++;
+    }
+
+    public void Feed() {
+        morality--;
+        obedience--;
+        currenthealth += maxhealth/4;
+        maxhealth++;
+    }
+
+    public void Clean() {
+        morality += 2;
+        obedience -= 2;
+        inteligence++;
+    }
+
+    public void beat() {
+        morality -= 2;
+        obedience += 2;
+        attack++;
+    }
+
+    public boolean teachAttack(int slot, Attack attack) {
+        switch(slot) {
+            case 1 : attack1 = attack;
+                break;
+            case 2: attack2 = attack;
+                break;
+            default : return false;
+        }
+        return true;
+    }
 }
