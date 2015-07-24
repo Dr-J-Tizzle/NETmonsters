@@ -29,19 +29,37 @@ public class Monster {
     private float morality;
     private float winratio;
 
-    public Monster(String name, Element bodyElement, Element attackElement, int rareity, int evolvelevel, Attack attack1, Attack attack2, Special special, String imageFront, String imageBack, float maxhealth,float power, float speed, float inteligence, float obedience, float morality) {
+    public Monster(String name, String bodyElement, String attackElement, int rareity, int evolvelevel, String imageFront, String imageBack, float maxhealth, float currenthealth, long dob, float power, float speed, float inteligence, float obedience, float morality, float experience, int level, float winratio) {
+        this.name = name;
+        this.bodyElement = selectElement(bodyElement);
+        this.attackElement = selectElement(attackElement);
+        this.rareity = rareity;
+        this.evolvelevel = evolvelevel;
+        this.imageFront = imageFront;
+        this.imageBack = imageBack;
+        this.maxhealth = maxhealth;
+        this.currenthealth = currenthealth;
+        this.power = power;
+        this.speed = speed;
+        this.inteligence = inteligence;
+        this.obedience = obedience;
+        this.morality = morality;
+        this.winratio = winratio;
+        this.dob = dob;
+        this.experience = experience;
+        this.level = level;
+    }
+
+    public Monster(String name, Element bodyElement, Element attackElement, int rareity, int evolvelevel, String imageFront, String imageBack, float maxhealth, float power, float speed, float inteligence, float obedience, float morality) {
         this.name = name;
         this.bodyElement = bodyElement;
         this.attackElement = attackElement;
         this.rareity = rareity;
         this.evolvelevel = evolvelevel;
-        this.attack1 = attack1;
-        this.attack2 = attack2;
-        this.special = special;
         this.imageFront = imageFront;
         this.imageBack = imageBack;
         this.maxhealth = maxhealth;
-        this.currenthealth = maxhealth;
+        currenthealth = maxhealth;
         this.power = power;
         this.speed = speed;
         this.inteligence = inteligence;
@@ -51,6 +69,22 @@ public class Monster {
         dob = new Date().getTime();
         experience = 0;
         level = 1;
+    }
+
+    private Element selectElement(String element) {
+        if(element.equalsIgnoreCase(Elements.EARTH.toString()))
+            return new Element(Elements.EARTH);
+        if(element.equalsIgnoreCase(Elements.ENERGY.toString()))
+            return new Element(Elements.ENERGY);
+        if(element.equalsIgnoreCase(Elements.WATER.toString()))
+            return new Element(Elements.WATER);
+        if(element.equalsIgnoreCase(Elements.FIRE.toString()))
+            return new Element(Elements.FIRE);
+        if(element.equalsIgnoreCase(Elements.ORGANIC.toString()))
+            return new Element(Elements.ORGANIC);
+        else {
+            return new Element(Elements.NORMAL);
+        }
     }
 
     public String getName() { return name; }
