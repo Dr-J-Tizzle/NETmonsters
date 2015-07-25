@@ -6,7 +6,7 @@
     <string name="splashLogo">MainLogo</string>
     <string name="dashLogo">NETmonsters PDA</string>
 
-    //Capture strings
+    <!--- Capture strings -->
     <string name="latitude_label">Latitude: </string>
     <string name="longitude_label">Longitude: </string>
     <string name="distance_label">Distance to Egg: </string>
@@ -17,4 +17,10 @@
     <string name="last_update_time_label">Last location update time: </string>
 
     <string name="location_updated_message">Location updated</string>
+
+    <!-- Attack button strings -->
+    <string name="btnAttackOne">Attack One</string>
+    <string name="btnAttackTwo">Attack Two</string>
+    <string name="btnSpecialMove">Special</string>
+    <string name="btnDodgeAbility">Dodge</string>
 </resources>
