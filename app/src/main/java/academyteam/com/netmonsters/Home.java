@@ -55,7 +55,6 @@ public class Home extends Activity {
                //startActivity(intentOptions);
             }
         });
-
         btnTrain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +63,8 @@ public class Home extends Activity {
                // Intent intentTrain = new Intent(getApplicationContext(), Train.class);
                 //startActivity(intentTrain);
             }
-        });*/
+        });
+        */
     }
 
 }

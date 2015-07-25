@@ -1,6 +1,8 @@
 package academyteam.com.netmonsters;
 
 import java.util.Date;
+import java.util.Random;
+
 
 /**
  * Created by James on 24/07/2015.
@@ -16,7 +18,7 @@ public class Monster {
     private int evolvelevel;
     private Attack attack1;
     private Attack attack2;
-    private Special special;
+    private Attack special;
     private String imageFront;
     private String imageBack;
     //stats
@@ -28,6 +30,7 @@ public class Monster {
     private int obedience;
     private int morality;
     private int winratio;
+    private Random rand = new Random();
 
     public Monster(String name, String bodyElement, String attackElement, int rareity, int evolvelevel, String imageFront, String imageBack, int maxhealth, int currenthealth, long dob, int power, int speed, int inteligence, int obedience, int morality, int experience, int level, int winratio) {
         this.name = name;
@@ -48,6 +51,28 @@ public class Monster {
         this.dob = dob;
         this.experience = experience;
         this.level = level;
+    }
+
+    public Monster (String nameIn, Element bodyTypeIn, Element attackTypeIn,Long dobIn,int powerIn,int healthIn, int currentHealthIn,int speedIn, int intelligenceIn,int expIn,int levelIn,int rareityIn,int obedienceIn,int moralityIn,Attack attack1In, Attack attack2In, Attack specialIn)
+    {
+        name = nameIn;
+        bodyElement = bodyTypeIn;
+        attackElement = attackTypeIn;
+        dob = dobIn;
+        power = powerIn;
+        maxhealth = healthIn;
+        currenthealth = currentHealthIn;
+        speed = speedIn;
+        inteligence = intelligenceIn;
+        experience = expIn;
+        level = levelIn;
+        rareity = rareityIn;
+        obedience = obedienceIn;
+        morality = moralityIn;
+        attack1 = attack1In;
+        attack2 = attack2In;
+        special = specialIn;
+        winratio = 0;
     }
 
     public Monster(String name, Element bodyElement, Element attackElement, int rareity, int evolvelevel, String imageFront, String imageBack, int maxhealth, int power, int speed, int inteligence, int obedience, int morality) {
@@ -97,7 +122,7 @@ public class Monster {
     public int getEvolvelevel() { return evolvelevel; }
     public Attack getAttack1() { return attack1; }
     public Attack getAttack2() { return attack2; }
-    public Special getSpecial() { return special; }
+    public Attack getSpecial() { return special; }
     public int getMaxhealth() { return maxhealth; }
     public int getCurrenthealth() {  return currenthealth; }
     public int getPower() { return power; }
@@ -119,7 +144,7 @@ public class Monster {
     public void setEvolvelevel(int evolvelevel) { this.evolvelevel = evolvelevel; }
     public void setAttack1(Attack attack1) { this.attack1 = attack1; }
     public void setAttack2(Attack attack2) { this.attack2 = attack2; }
-    public void setSpecial(Special special) { this.special = special; }
+    public void setSpecial(Attack special) { this.special = special; }
     public void setMaxhealth(int maxhealth) { this.maxhealth = maxhealth; }
     public void setCurrenthealth(int currenthealth) { this.currenthealth = currenthealth; }
     public void setPower(int power) { this.power = power; }
@@ -165,5 +190,35 @@ public class Monster {
             default : return false;
         }
         return true;
+    }
+
+    public int attack(Attack attack, Monster attacker, Monster defender)
+    {
+        int damage = 0;
+        for(int i = 0;i<attack.getHits();i++)
+        {
+            damage = damage + rand.nextInt(attack.getMaxDamage() + attack.getMinDamage()) - (int)attack.getMinDamage();
+        }
+        if(criticalHit())
+        {
+            damage = damage + damage;
+        }
+        return damage;
+    }
+
+    public Boolean Dodge()
+    {
+        if((rand.nextInt(100+0)-0+this.getSpeed()>50))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private Boolean criticalHit() {
+        //TODO
+        return false;
     }
 }
