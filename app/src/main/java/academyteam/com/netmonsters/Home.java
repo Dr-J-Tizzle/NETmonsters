@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * Created by Aaron on 24/07/2015.
  */
 public class Home extends Activity {
 
-    Button btnCapture, btnTrain, btnBattle, btnOptions;
+    ImageButton btnCapture, btnTrain, btnBattle, btnOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class Home extends Activity {
 
         // Get the reference of the buttons
        //btnBattle = (Button) findViewById(R.id.buttonBattle);
-        btnCapture = (Button) findViewById(R.id.buttonCapture);
+        btnCapture = (ImageButton) findViewById(R.id.buttonCapture);
        /* btnOptions = (Button) findViewById(R.id.buttonOptions);
         btnTrain = (Button) findViewById(R.id.buttonTrain);*/
 

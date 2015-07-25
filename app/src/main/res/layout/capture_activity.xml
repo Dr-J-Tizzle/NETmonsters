@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <Button
+        android:id="@+id/start_updates_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="24dp"
+        android:onClick="startUpdatesButtonHandler"
+        android:text="@string/start_updates" />
+
+    <Button
+        android:id="@+id/stop_updates_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="24dp"
+        android:enabled="false"
+        android:onClick="stopUpdatesButtonHandler"
+        android:text="@string/stop_updates" />
+
+    <TextView
+        android:id="@+id/latitude_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/start_updates_button"
+        android:layout_marginTop="24dp"
+        android:text="@string/latitude_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/latitude_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/latitude_label"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/latitude_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/longitude_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/latitude_label"
+        android:text="@string/longitude_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/longitude_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/longitude_label"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/longitude_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/distance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/longitude_label"
+        android:text="@string/distance_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/eggDist_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/distance_label"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/distance_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/last_update_time_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/distance_label"
+        android:text="@string/last_update_time_label"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/last_update_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/last_update_time_label"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/last_update_time_label"
+        android:textSize="16dp" />
+</RelativeLayout>
